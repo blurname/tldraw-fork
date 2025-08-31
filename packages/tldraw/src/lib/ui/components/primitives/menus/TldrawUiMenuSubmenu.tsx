@@ -71,7 +71,7 @@ export function TldrawUiMenuSubmenu<Translation extends string = string>({
 							className="tlui-menu__submenu__trigger"
 						>
 							<TldrawUiButtonLabel>{labelStr}</TldrawUiButtonLabel>
-							<TldrawUiButtonIcon icon="chevron-right" small />
+							<TldrawUiButtonIcon icon={dir === 'rtl' ? 'chevron-left' : 'chevron-right'} small />
 						</TldrawUiButton>
 					</_ContextMenu.ContextMenuSubTrigger>
 					<_ContextMenu.ContextMenuPortal container={container}>

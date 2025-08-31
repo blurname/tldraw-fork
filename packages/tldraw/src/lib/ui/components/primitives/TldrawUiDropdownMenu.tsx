@@ -133,9 +133,8 @@ export function TldrawUiDropdownMenuSubTrigger({
 	disabled,
 }: TLUiDropdownMenuSubTriggerProps) {
 	const dir = useDir()
-
 	return (
-		<_DropdownMenu.SubTrigger dir={dir} asChild disabled={disabled}>
+		<_DropdownMenu.SubTrigger asChild>
 			<TldrawUiButton
 				data-testid={id}
 				type="menu"
@@ -144,12 +143,11 @@ export function TldrawUiDropdownMenuSubTrigger({
 				title={title}
 			>
 				<TldrawUiButtonLabel>{label}</TldrawUiButtonLabel>
-				<TldrawUiButtonIcon icon="chevron-right" small />
+				<TldrawUiButtonIcon icon={dir === 'rtl' ? 'chevron-left' : 'chevron-right'} small />
 			</TldrawUiButton>
 		</_DropdownMenu.SubTrigger>
 	)
 }
-
 /** @public */
 export interface TLUiDropdownMenuSubContentProps {
 	id?: string
