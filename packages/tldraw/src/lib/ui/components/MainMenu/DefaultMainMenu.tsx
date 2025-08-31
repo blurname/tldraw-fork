@@ -27,8 +27,8 @@ export const DefaultMainMenu = memo(function DefaultMainMenu({ children }: TLUiM
 	const content = children ?? <DefaultMainMenuContent />
 
 	return (
-		<_DropdownMenu.Root dir={dir} open={isOpen} onOpenChange={onOpenChange} modal={false}>
-			<_DropdownMenu.Trigger asChild dir={dir}>
+		<_DropdownMenu.Root dir={'ltr'} open={isOpen} onOpenChange={onOpenChange} modal={false}>
+			<_DropdownMenu.Trigger asChild dir={'ltr'}>
 				<TldrawUiButton type="icon" data-testid="main-menu.button" title={msg('menu.title')}>
 					<TldrawUiButtonIcon icon="menu" small />
 				</TldrawUiButton>
@@ -37,7 +37,7 @@ export const DefaultMainMenu = memo(function DefaultMainMenu({ children }: TLUiM
 				<_DropdownMenu.Content
 					className="tlui-menu"
 					side="bottom"
-					align={dir === 'rtl' ? 'end' : 'start'}
+					align={'start'}
 					collisionPadding={4}
 					alignOffset={0}
 					sideOffset={6}
