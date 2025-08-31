@@ -143,6 +143,17 @@ function TooltipSingleton() {
 	const [isOpen, setIsOpen] = useState(false)
 	const triggerRef = useRef<HTMLDivElement>(null)
 	const isFirstShowRef = useRef(true)
+	// 安全地获取方向，如果 RTL 提供者不存在则默认为 'ltr'
+	let dir = 'ltr'
+	try {
+		dir = useDir()
+		console.log('hello dir', dir)
+	} catch {
+		console.log('catchhhhh')
+		// RTL 提供者不存在时使用默认值
+		dir = 'ltr'
+	}
+	console.log('dir', dir)
 
 	const currentTooltip = useValue(
 		'current tooltip',
@@ -206,7 +217,7 @@ function TooltipSingleton() {
 				sideOffset={currentTooltip.sideOffset}
 				avoidCollisions
 				collisionPadding={8}
-				dir="ltr"
+				dir={dir}
 			>
 				{currentTooltip.content}
 				<_Tooltip.Arrow className="tlui-tooltip__arrow" />
