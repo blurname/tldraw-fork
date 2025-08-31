@@ -1,6 +1,7 @@
 import { preventDefault, useContainer, useEditor, useEditorComponents } from '@tldraw/editor'
 import { ContextMenu as _ContextMenu } from 'radix-ui'
 import { ReactNode, memo, useCallback, useEffect } from 'react'
+import { useDir } from '../../context/rtl'
 import { useMenuIsOpen } from '../../hooks/useMenuIsOpen'
 import { useTranslation } from '../../hooks/useTranslation/useTranslation'
 import { TldrawUiMenuContextProvider } from '../primitives/menus/TldrawUiMenuContext'
@@ -101,9 +102,11 @@ export const DefaultContextMenu = memo(function DefaultContextMenu({
 	// so skip rendering the menu.
 	const content = children ?? <DefaultContextMenuContent />
 
+	const dir = useDir()
+
 	return (
-		<_ContextMenu.Root dir="ltr" onOpenChange={handleOpenChange} modal={false}>
-			<_ContextMenu.Trigger onContextMenu={undefined} dir="ltr" disabled={disabled}>
+		<_ContextMenu.Root dir={dir} onOpenChange={handleOpenChange} modal={false}>
+			<_ContextMenu.Trigger onContextMenu={undefined} dir={dir} disabled={disabled}>
 				{Canvas ? <Canvas /> : null}
 			</_ContextMenu.Trigger>
 			{isOpen && (

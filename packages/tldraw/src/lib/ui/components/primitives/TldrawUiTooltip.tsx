@@ -9,6 +9,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react'
+import { useDir } from '../../context/rtl'
 import { useTldrawUiOrientation } from './layout'
 
 const DEFAULT_TOOLTIP_DELAY_MS = 700
@@ -271,7 +272,7 @@ export const TldrawUiTooltip = forwardRef<HTMLButtonElement, TldrawUiTooltipProp
 						sideOffset={sideOffset}
 						avoidCollisions
 						collisionPadding={8}
-						dir="ltr"
+						dir={useDir()}
 					>
 						{content}
 						<_Tooltip.Arrow className="tlui-tooltip__arrow" />
