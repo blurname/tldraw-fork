@@ -2120,3 +2120,11 @@
 [dir='rtl'] .tlui-page-menu__item__button > span {
 	text-align: right;
 }
+
+/* RTL Context Menu Horizontal Positioning */
+.tlui-menu[data-dir='rtl'] {
+	position: relative !important;
+	/* left: auto !important; */
+	right: 10px !important;
+	transform: translateX(-100%) !important;
+}
