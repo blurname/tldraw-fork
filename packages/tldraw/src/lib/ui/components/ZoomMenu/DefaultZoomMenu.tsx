@@ -31,13 +31,13 @@ export const DefaultZoomMenu = memo(function DefaultZoomMenu({ children }: TLUiZ
 			<ZoomTriggerButton />
 			<_DropdownMenu.Portal container={container}>
 				<_DropdownMenu.Content
-					className="tlui-menu"
-					side="top"
-					align="start"
-					alignOffset={0}
-					sideOffset={8}
-					collisionPadding={4}
-				>
+				className="tlui-menu"
+				side="top"
+				align={dir === 'rtl' ? 'end' : 'start'}
+				alignOffset={0}
+				sideOffset={8}
+				collisionPadding={4}
+			>
 					<TldrawUiMenuContextProvider type="menu" sourceId="zoom-menu">
 						{content}
 					</TldrawUiMenuContextProvider>

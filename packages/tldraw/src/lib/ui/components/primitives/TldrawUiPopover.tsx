@@ -55,7 +55,7 @@ export interface TLUiPopoverContentProps {
 export function TldrawUiPopoverContent({
 	side,
 	children,
-	align = 'center',
+	align,
 	sideOffset = 8,
 	alignOffset = 0,
 	disableEscapeKeyDown = false,
@@ -63,6 +63,7 @@ export function TldrawUiPopoverContent({
 }: TLUiPopoverContentProps) {
 	const container = useContainer()
 	const dir = useDir()
+	const defaultAlign = align ?? 'center'
 	const ref = React.useRef<HTMLDivElement>(null)
 
 	const handleOpenAutoFocus = React.useCallback(() => {
@@ -81,7 +82,7 @@ export function TldrawUiPopoverContent({
 				className="tlui-popover__content"
 				side={side}
 				sideOffset={sideOffset}
-				align={align}
+				align={defaultAlign}
 				alignOffset={alignOffset}
 				dir={dir}
 				ref={ref}

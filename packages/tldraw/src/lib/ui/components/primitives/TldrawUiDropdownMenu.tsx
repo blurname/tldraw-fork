@@ -77,12 +77,14 @@ export interface TLUiDropdownMenuContentProps {
 export function TldrawUiDropdownMenuContent({
 	className,
 	side = 'bottom',
-	align = 'start',
+	align,
 	sideOffset = 8,
 	alignOffset = 8,
 	children,
 }: TLUiDropdownMenuContentProps) {
 	const container = useContainer()
+	const dir = useDir()
+	const defaultAlign = align ?? (dir === 'rtl' ? 'end' : 'start')
 
 	return (
 		<_DropdownMenu.Portal container={container}>
@@ -90,7 +92,7 @@ export function TldrawUiDropdownMenuContent({
 				className={classNames('tlui-menu', className)}
 				side={side}
 				sideOffset={sideOffset}
-				align={align}
+				align={defaultAlign}
 				alignOffset={alignOffset}
 				collisionPadding={4}
 			>

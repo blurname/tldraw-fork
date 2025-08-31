@@ -54,12 +54,13 @@ export function PeopleMenu({ children }: PeopleMenuProps) {
 			</_Popover.Trigger>
 			<_Popover.Portal container={container}>
 				<_Popover.Content
-					dir={dir}
-					className="tlui-menu"
-					side="bottom"
-					sideOffset={2}
-					collisionPadding={4}
-				>
+				dir={dir}
+				className="tlui-menu"
+				side="bottom"
+				align={dir === 'rtl' ? 'end' : 'start'}
+				sideOffset={2}
+				collisionPadding={4}
+			>
 					<div className="tlui-people-menu__wrapper">
 						<div className="tlui-people-menu__section">
 							<UserPresenceEditor />

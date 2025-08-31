@@ -37,7 +37,7 @@ export const DefaultMainMenu = memo(function DefaultMainMenu({ children }: TLUiM
 				<_DropdownMenu.Content
 					className="tlui-menu"
 					side="bottom"
-					align="start"
+					align={dir === 'rtl' ? 'end' : 'start'}
 					collisionPadding={4}
 					alignOffset={0}
 					sideOffset={6}
