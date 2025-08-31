@@ -2107,3 +2107,16 @@
 		transform: translateX(calc(100% + var(--tl-space-3)));
 	}
 }
+
+/* RTL Support for Menu Items */
+[dir='rtl'] .tlui-button__label {
+	text-align: right;
+}
+
+[dir='rtl'] .tlui-page-menu__name {
+	text-align: right;
+}
+
+[dir='rtl'] .tlui-page-menu__item__button > span {
+	text-align: right;
+}
