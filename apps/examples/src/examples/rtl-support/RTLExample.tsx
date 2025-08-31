@@ -8,7 +8,7 @@ import 'tldraw/tldraw.css'
  */
 export default function RTLExample() {
 	return (
-		<div className="tldraw__editor" dir="rtl" lang="ar">
+		<div className="tldraw__editor">
 			<Tldraw />
 		</div>
 	)

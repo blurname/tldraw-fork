@@ -106,7 +106,7 @@ export const DefaultContextMenu = memo(function DefaultContextMenu({
 
 	return (
 		<_ContextMenu.Root dir={dir} onOpenChange={handleOpenChange} modal={false}>
-			<_ContextMenu.Trigger onContextMenu={undefined} dir={dir} disabled={disabled}>
+			<_ContextMenu.Trigger onContextMenu={undefined} dir={'ltr'} disabled={disabled}>
 				{Canvas ? <Canvas /> : null}
 			</_ContextMenu.Trigger>
 			{isOpen && (
