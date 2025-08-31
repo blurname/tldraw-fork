@@ -1,6 +1,7 @@
 import { PageRecordType, TLPageId, track, useEditor } from '@tldraw/editor'
 import { useCallback } from 'react'
 import { useUiEvents } from '../../context/events'
+import { useDir } from '../../context/rtl'
 import { useTranslation } from '../../hooks/useTranslation/useTranslation'
 import { TldrawUiButton } from '../primitives/Button/TldrawUiButton'
 import { TldrawUiButtonIcon } from '../primitives/Button/TldrawUiButtonIcon'
@@ -29,6 +30,7 @@ export const PageItemSubmenu = track(function PageItemSubmenu({
 }: PageItemSubmenuProps) {
 	const editor = useEditor()
 	const msg = useTranslation()
+	const dir = useDir()
 	const pages = editor.getPages()
 	const trackEvent = useUiEvents()
 
