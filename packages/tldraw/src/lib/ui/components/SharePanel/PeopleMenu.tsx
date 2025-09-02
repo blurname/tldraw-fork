@@ -1,7 +1,7 @@
 import { useContainer, useEditor, usePeerIds, useValue } from '@tldraw/editor'
 import { Popover as _Popover } from 'radix-ui'
 import { ReactNode } from 'react'
-import { useDir } from '../../context/rtl'
+import { useDir } from '../../hooks/useTranslation/useTranslation'
 import { useMenuIsOpen } from '../../hooks/useMenuIsOpen'
 import { useTranslation } from '../../hooks/useTranslation/useTranslation'
 import { PeopleMenuAvatar } from './PeopleMenuAvatar'

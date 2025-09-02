@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { Dialog as _Dialog } from 'radix-ui'
 import { CSSProperties, ReactNode } from 'react'
-import { useDir } from '../../context/rtl'
+import { useDir } from '../../hooks/useTranslation/useTranslation'
 import { useTranslation } from '../../hooks/useTranslation/useTranslation'
 import { TldrawUiButton } from './Button/TldrawUiButton'
 import { TldrawUiButtonIcon } from './Button/TldrawUiButtonIcon'

@@ -1,7 +1,7 @@
 import { preventDefault, useContainer, useEditor, useEditorComponents } from '@tldraw/editor'
 import { ContextMenu as _ContextMenu } from 'radix-ui'
 import { ReactNode, memo, useCallback, useEffect, useRef, useState } from 'react'
-import { useDir } from '../../context/rtl'
+import { useDir } from '../../hooks/useTranslation/useTranslation'
 import { useMenuIsOpen } from '../../hooks/useMenuIsOpen'
 import { useTranslation } from '../../hooks/useTranslation/useTranslation'
 import { TldrawUiMenuContextProvider } from '../primitives/menus/TldrawUiMenuContext'

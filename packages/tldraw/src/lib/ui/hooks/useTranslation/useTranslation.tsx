@@ -118,6 +118,26 @@ export function useTranslation() {
 	)
 }
 
+/**
+ * 获取当前文本方向的 Hook
+ * @returns 'ltr' | 'rtl'
+ * @public
+ */
+export function useDir(): 'ltr' | 'rtl' {
+	const translation = useCurrentTranslation()
+	return translation.dir
+}
+
+/**
+ * 检查是否为 RTL 模式的 Hook
+ * @returns boolean
+ * @public
+ */
+export function useIsRtl(): boolean {
+	const translation = useCurrentTranslation()
+	return translation.dir === 'rtl'
+}
+
 export function untranslated(string: string) {
 	return string as TLUiTranslationKey
 }

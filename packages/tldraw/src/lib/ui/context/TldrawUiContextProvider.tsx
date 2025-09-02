@@ -17,7 +17,7 @@ import { BreakPointProvider } from './breakpoints'
 import { TLUiComponents, TldrawUiComponentsProvider } from './components'
 import { TldrawUiDialogsProvider } from './dialogs'
 import { TLUiEventHandler, TldrawUiEventsProvider } from './events'
-import { TldrawUiRtlProvider } from './rtl'
+
 import { TldrawUiToastsProvider } from './toasts'
 
 /** @public */
@@ -78,8 +78,7 @@ export const TldrawUiContextProvider = track(function TldrawUiContextProvider({
 				overrides={useMergedTranslationOverrides(overrides)}
 				locale={editor?.user.getLocale() ?? defaultUserPreferences.locale}
 			>
-				<TldrawUiRtlProvider>
-					<TldrawUiTooltipProvider>
+				<TldrawUiTooltipProvider>
 						<AssetUrlsProvider assetUrls={useDefaultUiAssetUrlsWithOverrides(assetUrls)}>
 							<TldrawUiEventsProvider onEvent={onUiEvent}>
 								<TldrawUiToastsProvider>
@@ -95,8 +94,7 @@ export const TldrawUiContextProvider = track(function TldrawUiContextProvider({
 								</TldrawUiToastsProvider>
 							</TldrawUiEventsProvider>
 						</AssetUrlsProvider>
-					</TldrawUiTooltipProvider>
-				</TldrawUiRtlProvider>
+				</TldrawUiTooltipProvider>
 			</TldrawUiTranslationProvider>
 		</MimeTypeContext.Provider>
 	)

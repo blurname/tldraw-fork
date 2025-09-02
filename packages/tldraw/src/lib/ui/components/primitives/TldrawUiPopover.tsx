@@ -2,7 +2,7 @@ import { useContainer } from '@tldraw/editor'
 import classNames from 'classnames'
 import { Popover as _Popover } from 'radix-ui'
 import React from 'react'
-import { useDir } from '../../context/rtl'
+import { useDir } from '../../hooks/useTranslation/useTranslation'
 import { useMenuIsOpen } from '../../hooks/useMenuIsOpen'
 
 /** @public */

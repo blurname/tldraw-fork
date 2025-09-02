@@ -1,7 +1,7 @@
 import { tltime } from '@tldraw/editor'
 import { Slider as _Slider } from 'radix-ui'
 import React, { useCallback, useEffect, useState } from 'react'
-import { useDir } from '../../context/rtl'
+import { useDir } from '../../hooks/useTranslation/useTranslation'
 import { TLUiTranslationKey } from '../../hooks/useTranslation/TLUiTranslationKey'
 import { useTranslation } from '../../hooks/useTranslation/useTranslation'
 import { TldrawUiTooltip, tooltipManager } from './TldrawUiTooltip'

@@ -9,7 +9,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react'
-import { useDir } from '../../context/rtl'
+import { useDir } from '../../hooks/useTranslation/useTranslation'
 import { useTldrawUiOrientation } from './layout'
 
 const DEFAULT_TOOLTIP_DELAY_MS = 700

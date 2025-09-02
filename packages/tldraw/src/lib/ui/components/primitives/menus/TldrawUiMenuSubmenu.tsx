@@ -1,7 +1,7 @@
 import { useContainer } from '@tldraw/editor'
 import { ContextMenu as _ContextMenu } from 'radix-ui'
 import { ReactNode } from 'react'
-import { useDir } from '../../../context/rtl'
+import { useDir } from '../../../hooks/useTranslation/useTranslation'
 import { useMenuIsOpen } from '../../../hooks/useMenuIsOpen'
 import { TLUiTranslationKey } from '../../../hooks/useTranslation/TLUiTranslationKey'
 import { useTranslation } from '../../../hooks/useTranslation/useTranslation'

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { ReactNode } from 'react'
 import { unwrapLabel } from '../../../context/actions'
-import { useDir } from '../../../context/rtl'
+import { useDir } from '../../../hooks/useTranslation/useTranslation'
 import { TLUiTranslationKey } from '../../../hooks/useTranslation/TLUiTranslationKey'
 import { useTranslation } from '../../../hooks/useTranslation/useTranslation'
 import { TldrawUiColumn, TldrawUiGrid, TldrawUiRow, useTldrawUiOrientation } from '../layout'
