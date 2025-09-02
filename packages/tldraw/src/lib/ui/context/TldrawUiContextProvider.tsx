@@ -17,6 +17,7 @@ import { BreakPointProvider } from './breakpoints'
 import { TLUiComponents, TldrawUiComponentsProvider } from './components'
 import { TldrawUiDialogsProvider } from './dialogs'
 import { TLUiEventHandler, TldrawUiEventsProvider } from './events'
+import { TldrawUiRtlProvider } from './rtl'
 import { TldrawUiToastsProvider } from './toasts'
 
 /** @public */
@@ -73,28 +74,30 @@ export const TldrawUiContextProvider = track(function TldrawUiContextProvider({
 	const editor = useMaybeEditor()
 	return (
 		<MimeTypeContext.Provider value={mediaMimeTypes}>
-			<TldrawUiTooltipProvider>
-				<AssetUrlsProvider assetUrls={useDefaultUiAssetUrlsWithOverrides(assetUrls)}>
-					<TldrawUiTranslationProvider
-						overrides={useMergedTranslationOverrides(overrides)}
-						locale={editor?.user.getLocale() ?? defaultUserPreferences.locale}
-					>
-						<TldrawUiEventsProvider onEvent={onUiEvent}>
-							<TldrawUiToastsProvider>
-								<TldrawUiDialogsProvider context={'tla'}>
-									<TldrawUiA11yProvider>
-										<BreakPointProvider forceMobile={forceMobile}>
-											<TldrawUiComponentsProvider overrides={components}>
-												<InternalProviders overrides={overrides}>{children}</InternalProviders>
-											</TldrawUiComponentsProvider>
-										</BreakPointProvider>
-									</TldrawUiA11yProvider>
-								</TldrawUiDialogsProvider>
-							</TldrawUiToastsProvider>
-						</TldrawUiEventsProvider>
-					</TldrawUiTranslationProvider>
-				</AssetUrlsProvider>
-			</TldrawUiTooltipProvider>
+			<TldrawUiTranslationProvider
+				overrides={useMergedTranslationOverrides(overrides)}
+				locale={editor?.user.getLocale() ?? defaultUserPreferences.locale}
+			>
+				<TldrawUiRtlProvider>
+					<TldrawUiTooltipProvider>
+						<AssetUrlsProvider assetUrls={useDefaultUiAssetUrlsWithOverrides(assetUrls)}>
+							<TldrawUiEventsProvider onEvent={onUiEvent}>
+								<TldrawUiToastsProvider>
+									<TldrawUiDialogsProvider context={'tla'}>
+										<TldrawUiA11yProvider>
+											<BreakPointProvider forceMobile={forceMobile}>
+												<TldrawUiComponentsProvider overrides={components}>
+													<InternalProviders overrides={overrides}>{children}</InternalProviders>
+												</TldrawUiComponentsProvider>
+											</BreakPointProvider>
+										</TldrawUiA11yProvider>
+									</TldrawUiDialogsProvider>
+								</TldrawUiToastsProvider>
+							</TldrawUiEventsProvider>
+						</AssetUrlsProvider>
+					</TldrawUiTooltipProvider>
+				</TldrawUiRtlProvider>
+			</TldrawUiTranslationProvider>
 		</MimeTypeContext.Provider>
 	)
 })
